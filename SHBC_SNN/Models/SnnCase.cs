@@ -9,7 +9,7 @@ namespace SHBC_SNN.Models
     #region Lookup Values
     public enum CaseType
     {
-        Conversion, Demolition, NewBuild, RenamingRenumbering, Retrospective
+        Conversion, Demolition, NewBuild, RenamingRenumbering, Retrospective // Can I add some stuff here?
     }
 
     public enum CaseStatus
@@ -79,8 +79,6 @@ namespace SHBC_SNN.Models
                                                                         * there is a performance hit.
                                                                         */
         //public virtual int TariffId { get; set; } 
-        
-        public virtual List<CaseStatus> Status { get; set; }
         
         #endregion
     }
