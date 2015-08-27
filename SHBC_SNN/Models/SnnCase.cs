@@ -80,6 +80,8 @@ namespace SHBC_SNN.Models
                                                                         */
         //public virtual int TariffId { get; set; } 
         
+        public virtual List<CaseStatus> Status { get; set; }
+        
         #endregion
     }
 }
