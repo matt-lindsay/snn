@@ -13,7 +13,7 @@ namespace SHBC_SNN.Tests.Controllers
     public class HomeControllerTest
     {
         [TestMethod]
-        public void Index()
+        public void Index(string searchTerm = null)
         {
             // Arrange
             HomeController controller = new HomeController();

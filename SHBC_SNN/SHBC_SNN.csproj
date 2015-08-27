@@ -20,6 +20,12 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>12.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -217,6 +223,10 @@
     <Compile Include="Migrations\201503131032013_ContactTitle.Designer.cs">
       <DependentUpon>201503131032013_ContactTitle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507211417147_ModifiedModel.cs" />
+    <Compile Include="Migrations\201507211417147_ModifiedModel.Designer.cs">
+      <DependentUpon>201507211417147_ModifiedModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\SnnCase.cs" />
@@ -375,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503131032013_ContactTitle.resx">
       <DependentUpon>201503131032013_ContactTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507211417147_ModifiedModel.resx">
+      <DependentUpon>201507211417147_ModifiedModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
