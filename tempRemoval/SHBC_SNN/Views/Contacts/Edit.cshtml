@@ -1,0 +1,88 @@
+﻿@model SHBC_SNN.Models.SnnContacts
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Edit Contact</legend>
+
+        @Html.HiddenFor(model => model.Id) @* Tracks id of Contact passing Contact in. *@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactType)
+            @Html.ValidationMessageFor(model => model.ContactType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactMethod)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactMethod)
+            @Html.ValidationMessageFor(model => model.ContactMethod)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrimaryContact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrimaryContact)
+            @Html.ValidationMessageFor(model => model.PrimaryContact)
+        </div>
+
+        @Html.HiddenFor(model => model.SnnCaseId) @* Holds id of Snn Case. *@
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { id = Model.SnnCaseId })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
