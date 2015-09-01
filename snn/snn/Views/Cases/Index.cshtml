@@ -1,0 +1,45 @@
+﻿@model IEnumerable<snn.Models.Case>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CaseNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaseStatus.StatusDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaseType.TypeDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaseNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaseStatus.StatusDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaseType.TypeDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CaseID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CaseID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CaseID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,42 @@
+﻿@model snn.Models.Case
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Case</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseNumber)
+        </dt>
+        
+        <dd>
+            @Html.DisplayFor(model => model.CaseNumber)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseStatus.StatusDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseStatus.StatusDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseType.TypeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseType.TypeDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CaseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
