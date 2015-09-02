@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\CasesController.cs" />
     <Compile Include="Controllers\CaseStatusController.cs" />
     <Compile Include="Controllers\CaseTypesController.cs" />
@@ -192,8 +193,13 @@
     <Compile Include="Migrations\201509011526190_AddedCaseNumberField.Designer.cs">
       <DependentUpon>201509011526190_AddedCaseNumberField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509021246194_AddressObject.cs" />
+    <Compile Include="Migrations\201509021246194_AddressObject.Designer.cs">
+      <DependentUpon>201509021246194_AddressObject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Case.cs" />
     <Compile Include="Models\CaseType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -273,6 +279,11 @@
     <Content Include="Views\Cases\Details.cshtml" />
     <Content Include="Views\Cases\Edit.cshtml" />
     <Content Include="Views\Cases\Index.cshtml" />
+    <Content Include="Views\Addresses\Create.cshtml" />
+    <Content Include="Views\Addresses\Delete.cshtml" />
+    <Content Include="Views\Addresses\Details.cshtml" />
+    <Content Include="Views\Addresses\Edit.cshtml" />
+    <Content Include="Views\Addresses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -297,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509011526190_AddedCaseNumberField.resx">
       <DependentUpon>201509011526190_AddedCaseNumberField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509021246194_AddressObject.resx">
+      <DependentUpon>201509021246194_AddressObject.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

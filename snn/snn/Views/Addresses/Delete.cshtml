@@ -1,0 +1,104 @@
+﻿@model snn.Models.Address
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SaonNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaonNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaonTxt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaonTxt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaonNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaonNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaonTxt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaonTxt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Locality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Locality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostTown)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostTown)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.County)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.County)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uprn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uprn)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

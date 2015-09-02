@@ -7,7 +7,7 @@ if ($project -eq $null) {
     $project = Get-Project
 }
 
-$libDirectory = Join-Path $installPath 'lib\net45'
+$libDirectory = Join-Path $installPath '..\lib\net45'
 $packageDirectory = Split-Path $installPath
 $compilerPackage = Get-ChildItem $packageDirectory | Where-Object {$_.Name.StartsWith($compilerPackageName)}
 $compilerPackageDirectory = Join-Path $packageDirectory $compilerPackage.Name

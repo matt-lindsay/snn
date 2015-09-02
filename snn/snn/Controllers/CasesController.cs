@@ -17,7 +17,7 @@ namespace snn.Controllers
         // GET: Cases
         public ActionResult Index()
         {
-            var cases = db.Cases.Include(r => r.CaseStatus).Include(s => s.CaseType);
+            var cases = db.Cases.Include(r => r.Address).Include(s => s.CaseStatus).Include(t => t.CaseType);
             return View(cases.ToList());
         }
 
@@ -39,6 +39,7 @@ namespace snn.Controllers
         // GET: Cases/Create
         public ActionResult Create()
         {
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress");
             ViewBag.CaseStatusID = new SelectList(db.CaseStatus, "CaseStatusID", "StatusDescription");
             ViewBag.CaseTypeID = new SelectList(db.CaseTypes, "CaseTypeID", "TypeDescription");
             return View();
@@ -49,7 +50,7 @@ namespace snn.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CaseID,CaseStatusID,CaseTypeID")] Case @case)
+        public ActionResult Create([Bind(Include = "CaseID,CaseStatusID,CaseTypeID,AddressID")] Case @case)
         {
             if (ModelState.IsValid)
             {
@@ -58,6 +59,7 @@ namespace snn.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", @case.AddressID);
             ViewBag.CaseStatusID = new SelectList(db.CaseStatus, "CaseStatusID", "StatusDescription", @case.CaseStatusID);
             ViewBag.CaseTypeID = new SelectList(db.CaseTypes, "CaseTypeID", "TypeDescription", @case.CaseTypeID);
             return View(@case);
@@ -75,6 +77,7 @@ namespace snn.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", @case.AddressID);
             ViewBag.CaseStatusID = new SelectList(db.CaseStatus, "CaseStatusID", "StatusDescription", @case.CaseStatusID);
             ViewBag.CaseTypeID = new SelectList(db.CaseTypes, "CaseTypeID", "TypeDescription", @case.CaseTypeID);
             return View(@case);
@@ -85,7 +88,7 @@ namespace snn.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CaseID,CaseStatusID,CaseTypeID")] Case @case)
+        public ActionResult Edit([Bind(Include = "CaseID,CaseStatusID,CaseTypeID,AddressID")] Case @case)
         {
             if (ModelState.IsValid)
             {
@@ -93,6 +96,7 @@ namespace snn.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", @case.AddressID);
             ViewBag.CaseStatusID = new SelectList(db.CaseStatus, "CaseStatusID", "StatusDescription", @case.CaseStatusID);
             ViewBag.CaseTypeID = new SelectList(db.CaseTypes, "CaseTypeID", "TypeDescription", @case.CaseTypeID);
             return View(@case);

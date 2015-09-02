@@ -26,6 +26,29 @@ namespace snn.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.CaseStatus.AddOrUpdate(
+                a => a.StatusDescription,
+                new Models.CaseStatus { StatusDescription = "Planning Approved" },
+                new Models.CaseStatus { StatusDescription = "Building Commenced" },
+                new Models.CaseStatus { StatusDescription = "Building Completion" },
+                new Models.CaseStatus { StatusDescription = "Payment" },
+                new Models.CaseStatus { StatusDescription = "Postcode Request" },
+                new Models.CaseStatus { StatusDescription = "Pre Release" },
+                new Models.CaseStatus { StatusDescription = "Complete NYB" },
+                new Models.CaseStatus { StatusDescription = "Complete LIVE" },
+                new Models.CaseStatus { StatusDescription = "Inactive" },
+                new Models.CaseStatus { StatusDescription = "Inactive Closed" }
+                );
+
+            context.CaseTypes.AddOrUpdate(
+                b => b.TypeDescription,
+                new Models.CaseType { TypeDescription = "Conversion" },
+                new Models.CaseType { TypeDescription = "Demolition" },
+                new Models.CaseType { TypeDescription = "New Build" },
+                new Models.CaseType { TypeDescription = "Renaming / Renumbering" },
+                new Models.CaseType { TypeDescription = "Retrospective" }
+                );
         }
     }
 }

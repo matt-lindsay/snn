@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace snn.Models
 {
@@ -27,5 +23,9 @@ namespace snn.Models
         [Display(Name = "Case Type")]
         public int CaseTypeID { get; set; }
         public virtual CaseType CaseType { get; set; }
+
+        //[Display(Name = "Address")]
+        public int AddressID { get; set; }
+        public virtual Address Address { get; set; }
     }
 }

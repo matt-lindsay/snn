@@ -24,5 +24,7 @@ namespace snn.Models
         public System.Data.Entity.DbSet<snn.Models.CaseStatus> CaseStatus { get; set; }
 
         public System.Data.Entity.DbSet<snn.Models.CaseType> CaseTypes { get; set; }
+
+        public System.Data.Entity.DbSet<snn.Models.Address> Addresses { get; set; }
     }
 }
