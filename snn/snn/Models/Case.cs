@@ -24,7 +24,7 @@ namespace snn.Models
         public int CaseTypeID { get; set; }
         public virtual CaseType CaseType { get; set; }
 
-        //[Display(Name = "Address")]
+        [Display(Name = "Address")]
         public int AddressID { get; set; }
         public virtual Address Address { get; set; }
     }

@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using snn.Models;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace snn.Controllers
 {
@@ -48,7 +50,7 @@ namespace snn.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "AddressID,SaonNum,SaonTxt,PaonNum,PaonTxt,StreetName,Locality,PostTown,County,PostCode,Uprn")] Address address)
         {
-            if (ModelState.IsValid)
+             if (ModelState.IsValid)
             {
                 db.Addresses.Add(address);
                 db.SaveChanges();

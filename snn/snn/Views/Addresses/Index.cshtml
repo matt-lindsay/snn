@@ -12,31 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SaonNum)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SaonTxt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PaonNum)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PaonTxt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StreetName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Locality)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PostTown)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.County)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PostCode)
+            @Html.DisplayNameFor(model => model.FullAddress)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Uprn)
@@ -47,31 +23,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SaonNum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SaonTxt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PaonNum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PaonTxt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StreetName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Locality)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostTown)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.County)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostCode)
+            @Html.DisplayFor(modelItem => item.FullAddress)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Uprn)

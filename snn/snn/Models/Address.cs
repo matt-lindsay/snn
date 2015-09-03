@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace snn.Models
 {
@@ -45,31 +44,21 @@ namespace snn.Models
         {
             get
             {
-                return CreateFullAddress();
+                StringBuilder sb = new StringBuilder();
+                string comma = ", ";
+                if (!string.IsNullOrEmpty(SaonNum)) sb.Append(SaonNum).Append(comma);
+                if (!string.IsNullOrEmpty(SaonTxt)) sb.Append(SaonTxt).Append(comma);
+                if (!string.IsNullOrEmpty(PaonNum)) sb.Append(PaonNum).Append(comma);
+                if (!string.IsNullOrEmpty(PaonTxt)) sb.Append(PaonTxt).Append(comma);
+                if (!string.IsNullOrEmpty(StreetName)) sb.Append(StreetName).Append(comma);
+                if (!string.IsNullOrEmpty(Locality)) sb.Append(Locality).Append(comma);
+                if (!string.IsNullOrEmpty(PostTown)) sb.Append(PostTown).Append(comma);
+                if (!string.IsNullOrEmpty(County)) sb.Append(County).Append(" ");
+                if (!string.IsNullOrEmpty(PostCode)) sb.Append(PostCode);
+                return sb.ToString();
             }
         }
 
-        //public virtual List<Case> Case { get; set; }
         public virtual ICollection<Case> Cases { get; set; }
-
-        private string CreateFullAddress()
-        {
-            StringBuilder baseString = new StringBuilder();
-            string comma = ",";
-
-            baseString.Append(SaonNum).Append(comma).Append(SaonTxt).Append(comma)
-                .Append(PaonNum).Append(comma).Append(PaonTxt).Append(comma)
-                .Append(StreetName).Append(comma).Append(Locality).Append(comma)
-                .Append(PostTown).Append(comma).Append(County).Append(comma)
-                .Append(PostCode);
-
-            string fullAddress = "";
-
-            fullAddress = baseString.ToString();
-
-            fullAddress = Regex.Replace(fullAddress, ",,", ",");
-
-            return fullAddress;
-        }
     }
 }
