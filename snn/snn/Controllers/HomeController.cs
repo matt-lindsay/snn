@@ -15,7 +15,7 @@ namespace snn.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "The Street Naming and Numbering Applicator.";
 
             return View();
         }

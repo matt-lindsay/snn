@@ -47,7 +47,8 @@ namespace snn.Migrations
                 new Models.CaseType { TypeDescription = "Demolition" },
                 new Models.CaseType { TypeDescription = "New Build" },
                 new Models.CaseType { TypeDescription = "Renaming / Renumbering" },
-                new Models.CaseType { TypeDescription = "Retrospective" }
+                new Models.CaseType { TypeDescription = "Retrospective" },
+                new Models.CaseType { TypeDescription = "N/A" }
                 );
         }
     }

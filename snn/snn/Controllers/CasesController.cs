@@ -39,9 +39,12 @@ namespace snn.Controllers
         // GET: Cases/Create
         public ActionResult Create()
         {
+            var statuses = db.CaseStatus.OrderBy(s => s.StatusDescription);
+            var types = db.CaseTypes.OrderBy(t => t.TypeDescription);
+
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress");
-            ViewBag.CaseStatusID = new SelectList(db.CaseStatus, "CaseStatusID", "StatusDescription");
-            ViewBag.CaseTypeID = new SelectList(db.CaseTypes, "CaseTypeID", "TypeDescription");
+            ViewBag.CaseStatusID = new SelectList(statuses, "CaseStatusID", "StatusDescription");
+            ViewBag.CaseTypeID = new SelectList(types, "CaseTypeID", "TypeDescription", 6); // 6 equals default value ('N/A').
             return View();
         }
 

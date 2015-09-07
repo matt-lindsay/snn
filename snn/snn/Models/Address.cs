@@ -46,10 +46,10 @@ namespace snn.Models
             {
                 StringBuilder sb = new StringBuilder();
                 string comma = ", ";
-                if (!string.IsNullOrEmpty(SaonNum)) sb.Append(SaonNum).Append(comma);
                 if (!string.IsNullOrEmpty(SaonTxt)) sb.Append(SaonTxt).Append(comma);
-                if (!string.IsNullOrEmpty(PaonNum)) sb.Append(PaonNum).Append(comma);
+                if (!string.IsNullOrEmpty(SaonNum)) sb.Append(SaonNum).Append(comma);
                 if (!string.IsNullOrEmpty(PaonTxt)) sb.Append(PaonTxt).Append(comma);
+                if (!string.IsNullOrEmpty(PaonNum)) sb.Append(PaonNum).Append(" ");
                 if (!string.IsNullOrEmpty(StreetName)) sb.Append(StreetName).Append(comma);
                 if (!string.IsNullOrEmpty(Locality)) sb.Append(Locality).Append(comma);
                 if (!string.IsNullOrEmpty(PostTown)) sb.Append(PostTown).Append(comma);
