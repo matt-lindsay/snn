@@ -38,6 +38,9 @@ namespace snn.Models
         // TODO End Date - nullable.
 
         // TODO ACI - nullable.
+        [Display(Name = "ADI")]
+        public int? AddressChangeIntelligenceID { get; set; }
+        public virtual AddressChangeIntelligence AddressChangeIntelligence { get; set; }
 
         // TODO ACI Date - nullable.
 
