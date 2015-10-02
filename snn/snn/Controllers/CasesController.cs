@@ -17,7 +17,7 @@ namespace snn.Controllers
         // GET: Cases
         public ActionResult Index()
         {
-            var cases = db.Cases.Include(r => r.Address).Include(s => s.CaseStatus).Include(t => t.CaseType);
+            var cases = db.Cases.Include(r => r.Address).Include(s => s.CaseStatus).Include(t => t.CaseType).Include(d => d.AddressChangeIntelligence);
             return View(cases.ToList());
         }
 
@@ -41,10 +41,12 @@ namespace snn.Controllers
         {
             var statuses = db.CaseStatus.OrderBy(s => s.StatusDescription);
             var types = db.CaseTypes.OrderBy(t => t.TypeDescription);
+            var adi = db.AddressChangeIntelligences.OrderBy(d => d.AddressChangeIntelligenceDescription);
 
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress");
             ViewBag.CaseStatusID = new SelectList(statuses, "CaseStatusID", "StatusDescription");
             ViewBag.CaseTypeID = new SelectList(types, "CaseTypeID", "TypeDescription", 6); // 6 equals default value ('N/A').
+            ViewBag.AddressChangeIntelligenceID = new SelectList(adi, "AddressChangeIntelligenceID", "AddressChangeIntelligenceDescription", 4); // 4 equals default value ('N/A').
             return View();
         }
 
@@ -53,7 +55,7 @@ namespace snn.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CaseID,CaseStatusID,CaseTypeID,AddressID")] Case @case)
+        public ActionResult Create([Bind(Include = "CaseID,CaseStatusID,CaseTypeID,AddressID,AddressChangeIntelligenceID")] Case @case)
         {
             if (ModelState.IsValid)
             {
@@ -65,6 +67,7 @@ namespace snn.Controllers
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", @case.AddressID);
             ViewBag.CaseStatusID = new SelectList(db.CaseStatus, "CaseStatusID", "StatusDescription", @case.CaseStatusID);
             ViewBag.CaseTypeID = new SelectList(db.CaseTypes, "CaseTypeID", "TypeDescription", @case.CaseTypeID);
+            ViewBag.AddressChangeIntelligenceID = new SelectList(db.AddressChangeIntelligences, "AddressChangeIntelligenceID", "AddressChangeIntelligenceDescription", @case.AddressChangeIntelligenceID);
             return View(@case);
         }
 
@@ -83,6 +86,7 @@ namespace snn.Controllers
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", @case.AddressID);
             ViewBag.CaseStatusID = new SelectList(db.CaseStatus, "CaseStatusID", "StatusDescription", @case.CaseStatusID);
             ViewBag.CaseTypeID = new SelectList(db.CaseTypes, "CaseTypeID", "TypeDescription", @case.CaseTypeID);
+            ViewBag.AddressChangeIntelligenceID = new SelectList(db.AddressChangeIntelligences, "AddressChangeIntelligenceID", "AddressChangeIntelligenceDescription", @case.AddressChangeIntelligenceID);
             return View(@case);
         }
 
@@ -91,7 +95,7 @@ namespace snn.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CaseID,CaseStatusID,CaseTypeID,AddressID")] Case @case)
+        public ActionResult Edit([Bind(Include = "CaseID,CaseStatusID,CaseTypeID,AddressID,AddressChangeIntelligenceID")] Case @case)
         {
             if (ModelState.IsValid)
             {
@@ -102,6 +106,7 @@ namespace snn.Controllers
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", @case.AddressID);
             ViewBag.CaseStatusID = new SelectList(db.CaseStatus, "CaseStatusID", "StatusDescription", @case.CaseStatusID);
             ViewBag.CaseTypeID = new SelectList(db.CaseTypes, "CaseTypeID", "TypeDescription", @case.CaseTypeID);
+            ViewBag.AddressChangeIntelligenceID = new SelectList(db.AddressChangeIntelligences, "AddressChangeIntelligenceID", "AddressChangeIntelligenceDescription", @case.AddressChangeIntelligenceID);
             return View(@case);
         }
 

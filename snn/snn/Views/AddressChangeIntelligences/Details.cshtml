@@ -1,0 +1,26 @@
+﻿@model snn.Models.AddressChangeIntelligence
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AddressChangeIntelligence</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressChangeIntelligenceDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressChangeIntelligenceDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AddressChangeIntelligenceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddressChangeIntelligencesController.cs" />
     <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\CasesController.cs" />
     <Compile Include="Controllers\CaseStatusController.cs" />
@@ -201,9 +202,18 @@
     <Compile Include="Migrations\201509071014143_NullableCaseType.Designer.cs">
       <DependentUpon>201509071014143_NullableCaseType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510021038498_AdiModel.cs" />
+    <Compile Include="Migrations\201510021038498_AdiModel.Designer.cs">
+      <DependentUpon>201510021038498_AdiModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510021235480_CaseStartDate.cs" />
+    <Compile Include="Migrations\201510021235480_CaseStartDate.Designer.cs">
+      <DependentUpon>201510021235480_CaseStartDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AddressChangeIntelligence.cs" />
     <Compile Include="Models\Case.cs" />
     <Compile Include="Models\CaseType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -223,6 +233,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\datepicker.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -288,6 +299,11 @@
     <Content Include="Views\Addresses\Details.cshtml" />
     <Content Include="Views\Addresses\Edit.cshtml" />
     <Content Include="Views\Addresses\Index.cshtml" />
+    <Content Include="Views\AddressChangeIntelligences\Create.cshtml" />
+    <Content Include="Views\AddressChangeIntelligences\Delete.cshtml" />
+    <Content Include="Views\AddressChangeIntelligences\Details.cshtml" />
+    <Content Include="Views\AddressChangeIntelligences\Edit.cshtml" />
+    <Content Include="Views\AddressChangeIntelligences\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -318,6 +334,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509071014143_NullableCaseType.resx">
       <DependentUpon>201509071014143_NullableCaseType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510021038498_AdiModel.resx">
+      <DependentUpon>201510021038498_AdiModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510021235480_CaseStartDate.resx">
+      <DependentUpon>201510021235480_CaseStartDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

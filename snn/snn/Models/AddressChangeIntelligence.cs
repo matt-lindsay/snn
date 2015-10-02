@@ -8,7 +8,7 @@ namespace snn.Models
 		[Key]
 		public int AddressChangeIntelligenceID { get; set; }
 		
-		[Display(Name = "Address Change Intelligence")]
+		[Display(Name = "ACI")]
 		public string AddressChangeIntelligenceDescription { get; set; }
 		
 		public virtual List<Case> Case { get; set; }

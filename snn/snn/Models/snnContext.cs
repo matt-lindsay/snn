@@ -26,5 +26,7 @@ namespace snn.Models
         public System.Data.Entity.DbSet<snn.Models.CaseType> CaseTypes { get; set; }
 
         public System.Data.Entity.DbSet<snn.Models.Address> Addresses { get; set; }
+
+        public System.Data.Entity.DbSet<snn.Models.AddressChangeIntelligence> AddressChangeIntelligences { get; set; }
     }
 }

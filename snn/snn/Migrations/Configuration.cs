@@ -50,6 +50,14 @@ namespace snn.Migrations
                 new Models.CaseType { TypeDescription = "Retrospective" },
                 new Models.CaseType { TypeDescription = "N/A" }
                 );
+
+            context.AddressChangeIntelligences.AddOrUpdate(
+                c => c.AddressChangeIntelligenceDescription,
+                new Models.AddressChangeIntelligence { AddressChangeIntelligenceDescription = "Planning" },
+                new Models.AddressChangeIntelligence { AddressChangeIntelligenceDescription = "Building" },
+                new Models.AddressChangeIntelligence { AddressChangeIntelligenceDescription = "CTAX / NNDR" },
+                new Models.AddressChangeIntelligence { AddressChangeIntelligenceDescription = "N/A" }
+                );
         }
     }
 }

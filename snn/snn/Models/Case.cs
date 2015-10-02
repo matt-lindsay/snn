@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace snn.Models
 {
@@ -29,7 +30,10 @@ namespace snn.Models
         public int AddressID { get; set; }
         public virtual Address Address { get; set; }
 
-        // TODO Start Date.
+        [Display(Name = "Start Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
+        [DataType(DataType.Date)]
+        public DateTime? StartDate { get; set; }
 
         // TODO Details - basic details.
 
@@ -38,7 +42,7 @@ namespace snn.Models
         // TODO End Date - nullable.
 
         // TODO ACI - nullable.
-        [Display(Name = "ADI")]
+        [Display(Name = "ACI")]
         public int? AddressChangeIntelligenceID { get; set; }
         public virtual AddressChangeIntelligence AddressChangeIntelligence { get; set; }
 
