@@ -95,7 +95,7 @@ namespace snn.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CaseID,CaseStatusID,CaseTypeID,AddressID,AddressChangeIntelligenceID")] Case @case)
+        public ActionResult Edit([Bind(Include = "CaseID,CaseStatusID,CaseTypeID,AddressID,AddressChangeIntelligenceID,StartDate")] Case @case)
         {
             if (ModelState.IsValid)
             {

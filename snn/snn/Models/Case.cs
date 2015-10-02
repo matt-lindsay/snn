@@ -31,7 +31,7 @@ namespace snn.Models
         public virtual Address Address { get; set; }
 
         [Display(Name = "Start Date")]
-        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0: dd/MM/yyyy}")]
         [DataType(DataType.Date)]
         public DateTime? StartDate { get; set; }
 
