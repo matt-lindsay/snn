@@ -35,7 +35,9 @@ namespace snn.Models
         [DataType(DataType.Date)]
         public DateTime? StartDate { get; set; }
 
-        // TODO Details - basic details.
+        // TODO Details - Controller and View setup.
+        [Display(Name = "Details")]
+        public string Details { get; set; }
 
         // TODO Last Updated.
 

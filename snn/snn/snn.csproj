@@ -210,6 +210,10 @@
     <Compile Include="Migrations\201510021235480_CaseStartDate.Designer.cs">
       <DependentUpon>201510021235480_CaseStartDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511121653013_CaseDetailsFieldAdded.cs" />
+    <Compile Include="Migrations\201511121653013_CaseDetailsFieldAdded.Designer.cs">
+      <DependentUpon>201511121653013_CaseDetailsFieldAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -411,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510021235480_CaseStartDate.resx">
       <DependentUpon>201510021235480_CaseStartDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511121653013_CaseDetailsFieldAdded.resx">
+      <DependentUpon>201511121653013_CaseDetailsFieldAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

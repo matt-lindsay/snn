@@ -18,7 +18,7 @@ namespace snn.Controllers
         public ActionResult Index()
         {
             var cases = db.Cases.Include(r => r.Address).Include(s => s.CaseStatus).Include(t => t.CaseType).Include(d => d.AddressChangeIntelligence);
-            return View(cases.ToList());
+            return View(cases.ToList()); //
         }
 
         // GET: Cases/Details/5
